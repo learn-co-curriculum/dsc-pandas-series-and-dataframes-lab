@@ -20,17 +20,17 @@ df.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -133,7 +133,7 @@ df.head()
 
 
 ```python
-# Your code here
+df['Num_Lines'] = df.LINENAME.map(lambda x: len(x))
 ```
 
 ## Write a function to clean a column name.
@@ -141,7 +141,7 @@ df.head()
 
 ```python
 def clean(col_name):
-    cleaned = #Your code here; whatever you want to do to col_name. Hint: think back to str methods.
+    cleaned = col_name.strip()#Your code here; whatever you want to do to col_name. Hint: think back to str methods.
     return cleaned
 ```
 
@@ -160,16 +160,164 @@ df.columns = [clean(col) for col in df.columns]
 df.columns
 ```
 
+
+
+
+    Index(['C/A', 'UNIT', 'SCP', 'STATION', 'LINENAME', 'DIVISION', 'DATE', 'TIME',
+           'DESC', 'ENTRIES', 'EXITS', 'Num_Lines'],
+          dtype='object')
+
+
+
 ## Compare subway traffic by day of the week. Display this as a graph.
 
 
 ```python
-#Your code here
+df.DATE = pd.to_datetime(df.DATE)
+```
+
+
+```python
+df['Dayofweek'] = df.DATE.dt.dayofweek
+```
+
+
+```python
+grouped = df.groupby('Dayofweek').sum()
+grouped.plot(kind='barh')
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x1d90f543ac8>
+
+
+
+
+![png](index_files/index_12_1.png)
+
+
+
+```python
+df.DATE.dt.dayofweek?
 ```
 
 ## Is there more subway traffic on a weekend or a weekday?    Be specific in comparing magnitudes.
 
 
 ```python
-#Your code here
+grouped = grouped.reset_index()
+grouped.head()
+```
+
+
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Dayofweek</th>
+      <th>ENTRIES</th>
+      <th>EXITS</th>
+      <th>Num_Lines</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1114237052454</td>
+      <td>911938153513</td>
+      <td>76110</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1143313287046</td>
+      <td>942230721477</td>
+      <td>77303</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1123655222441</td>
+      <td>920630864687</td>
+      <td>75713</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>1122723988662</td>
+      <td>920691927110</td>
+      <td>76607</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>1110224700078</td>
+      <td>906799065337</td>
+      <td>75573</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+grouped['IsWeekend'] = grouped.Dayofweek.map({0:False,1:False,2:False,3:False,4:False,5:True,6:True})
+wkend = grouped.groupby('IsWeekend').mean()
+wkend[['ENTRIES', 'EXITS']].plot(kind='barh')
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x1d90ff5a3c8>
+
+
+
+
+![png](index_files/index_16_1.png)
+
+
+
+```python
+# What Not To Do
+grouped['IsWeekend'] = grouped.Dayofweek.map({0:False,1:False,2:False,3:False,4:False,5:True,6:True})
+wkend = grouped.groupby('IsWeekend').sum()
+wkend[['ENTRIES', 'EXITS']].plot(kind='barh')
+```
+
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x1d90f48fda0>
+
+
+
+
+![png](index_files/index_17_1.png)
+
+
+
+```python
+
 ```
