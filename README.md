@@ -129,6 +129,35 @@ df.head()
 
 # Practice
 
+## Objectives
+You will be able to:
+* Understand and explain what Pandas Series and DataFrames are and how they differ from dictionaries and lists
+* Create Series & DataFrames from dictionaries and lists
+* Manipulate columns in DataFrames (df.rename, df.drop)
+* Manipulate the index in DataFrames (df.reindex, df.drop, df.rename)
+* Manipulate column datatypes
+
+# Rename all the columns to lower case
+
+
+```python
+#Your code here
+```
+
+# Change the Index to be the Line Names
+
+
+```python
+#Your code here
+```
+
+# Painstakingly change the index back
+
+
+```python
+# Your code here
+```
+
 ## Create another column 'Num_Lines' that is a count of how many lines pass through a station. Then sort your dataframe by this column in descending order.
 
 
@@ -172,4 +201,11 @@ df.columns
 
 ```python
 #Your code here
+```
+
+# Drop a couple of columns
+
+
+```python
+# Your code here
 ```
