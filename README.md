@@ -129,6 +129,284 @@ df.head()
 
 # Practice
 
+## Objectives
+You will be able to:
+* Understand and explain what Pandas Series and DataFrames are and how they differ from dictionaries and lists
+* Create Series & DataFrames from dictionaries and lists
+* Manipulate columns in DataFrames (df.rename, df.drop)
+* Manipulate the index in DataFrames (df.reindex, df.drop, df.rename)
+* Manipulate column datatypes
+
+# Rename all the columns to lower case
+
+
+```python
+new_cols = [col.lower() for col in df.columns]
+#set equal to df.columns if you want the change to take place
+new_cols
+```
+
+
+
+
+    ['c/a',
+     'unit',
+     'scp',
+     'station',
+     'linename',
+     'division',
+     'date',
+     'time',
+     'desc',
+     'entries',
+     'exits                                                               ']
+
+
+
+# Change the Index to be the Line Names
+
+
+```python
+df = df.set_index('LINENAME')
+df.head()
+```
+
+
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C/A</th>
+      <th>UNIT</th>
+      <th>SCP</th>
+      <th>STATION</th>
+      <th>DIVISION</th>
+      <th>DATE</th>
+      <th>TIME</th>
+      <th>DESC</th>
+      <th>ENTRIES</th>
+      <th>EXITS</th>
+    </tr>
+    <tr>
+      <th>LINENAME</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NQR456W</th>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>00:00:00</td>
+      <td>REGULAR</td>
+      <td>6736067</td>
+      <td>2283184</td>
+    </tr>
+    <tr>
+      <th>NQR456W</th>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>04:00:00</td>
+      <td>REGULAR</td>
+      <td>6736087</td>
+      <td>2283188</td>
+    </tr>
+    <tr>
+      <th>NQR456W</th>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>08:00:00</td>
+      <td>REGULAR</td>
+      <td>6736105</td>
+      <td>2283229</td>
+    </tr>
+    <tr>
+      <th>NQR456W</th>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>12:00:00</td>
+      <td>REGULAR</td>
+      <td>6736180</td>
+      <td>2283314</td>
+    </tr>
+    <tr>
+      <th>NQR456W</th>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>16:00:00</td>
+      <td>REGULAR</td>
+      <td>6736349</td>
+      <td>2283384</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# Painstakingly change the index back
+df = df.reset_index() #Not that painful
+df.head()
+```
+
+
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LINENAME</th>
+      <th>C/A</th>
+      <th>UNIT</th>
+      <th>SCP</th>
+      <th>STATION</th>
+      <th>DIVISION</th>
+      <th>DATE</th>
+      <th>TIME</th>
+      <th>DESC</th>
+      <th>ENTRIES</th>
+      <th>EXITS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NQR456W</td>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>00:00:00</td>
+      <td>REGULAR</td>
+      <td>6736067</td>
+      <td>2283184</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NQR456W</td>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>04:00:00</td>
+      <td>REGULAR</td>
+      <td>6736087</td>
+      <td>2283188</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NQR456W</td>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>08:00:00</td>
+      <td>REGULAR</td>
+      <td>6736105</td>
+      <td>2283229</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NQR456W</td>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>12:00:00</td>
+      <td>REGULAR</td>
+      <td>6736180</td>
+      <td>2283314</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NQR456W</td>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>16:00:00</td>
+      <td>REGULAR</td>
+      <td>6736349</td>
+      <td>2283384</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 ## Create another column 'Num_Lines' that is a count of how many lines pass through a station. Then sort your dataframe by this column in descending order.
 
 
@@ -195,7 +473,7 @@ grouped.plot(kind='barh')
 
 
 
-![png](index_files/index_12_1.png)
+![png](index_files/index_17_1.png)
 
 
 
@@ -295,7 +573,7 @@ wkend[['ENTRIES', 'EXITS']].plot(kind='barh')
 
 
 
-![png](index_files/index_16_1.png)
+![png](index_files/index_21_1.png)
 
 
 
@@ -314,7 +592,152 @@ wkend[['ENTRIES', 'EXITS']].plot(kind='barh')
 
 
 
-![png](index_files/index_17_1.png)
+![png](index_files/index_22_1.png)
+
+
+# Drop a couple of columns
+
+
+```python
+df.head(2)
+```
+
+
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LINENAME</th>
+      <th>C/A</th>
+      <th>UNIT</th>
+      <th>SCP</th>
+      <th>STATION</th>
+      <th>DIVISION</th>
+      <th>DATE</th>
+      <th>TIME</th>
+      <th>DESC</th>
+      <th>ENTRIES</th>
+      <th>EXITS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NQR456W</td>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>00:00:00</td>
+      <td>REGULAR</td>
+      <td>6736067</td>
+      <td>2283184</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NQR456W</td>
+      <td>A002</td>
+      <td>R051</td>
+      <td>02-00-00</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>04:00:00</td>
+      <td>REGULAR</td>
+      <td>6736087</td>
+      <td>2283188</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df = df.drop(['C/A', 'SCP'], axis=1)
+df.head(2)
+```
+
+
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LINENAME</th>
+      <th>UNIT</th>
+      <th>STATION</th>
+      <th>DIVISION</th>
+      <th>DATE</th>
+      <th>TIME</th>
+      <th>DESC</th>
+      <th>ENTRIES</th>
+      <th>EXITS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NQR456W</td>
+      <td>R051</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>00:00:00</td>
+      <td>REGULAR</td>
+      <td>6736067</td>
+      <td>2283184</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NQR456W</td>
+      <td>R051</td>
+      <td>59 ST</td>
+      <td>BMT</td>
+      <td>08/25/2018</td>
+      <td>04:00:00</td>
+      <td>REGULAR</td>
+      <td>6736087</td>
+      <td>2283188</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 
