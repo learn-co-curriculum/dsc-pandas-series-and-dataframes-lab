@@ -1,4 +1,18 @@
 
+# Understanding Pandas Series and DataFrames - Lab
+
+# Introduction
+
+In this lab, let's get some hands on practice working with data cleanup using Pandas.
+
+## Objectives
+You will be able to:
+
+* Create Series & DataFrames from dictionaries and lists
+* Manipulate columns in DataFrames (df.rename, df.drop)
+* Manipulate the index in DataFrames (df.reindex, df.drop, df.rename)
+* Manipulate column datatypes
+
 
 ```python
 import pandas as pd
