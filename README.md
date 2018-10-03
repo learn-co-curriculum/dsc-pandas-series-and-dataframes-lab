@@ -8,7 +8,6 @@ In this lab, let's get some hands on practice working with data cleanup using Pa
 ## Objectives
 You will be able to:
 
-* Create Series & DataFrames from dictionaries and lists
 * Manipulate columns in DataFrames (df.rename, df.drop)
 * Manipulate the index in DataFrames (df.reindex, df.drop, df.rename)
 * Manipulate column datatypes
