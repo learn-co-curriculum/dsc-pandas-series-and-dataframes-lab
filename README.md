@@ -1,4 +1,19 @@
 
+# Understanding Pandas Series and DataFrames - Lab
+
+## Introduction
+
+In this lab, let's get some hands on practice working with data cleanup using Pandas.
+
+## Objectives
+You will be able to:
+
+* Manipulate columns in DataFrames (df.rename, df.drop)
+* Manipulate the index in DataFrames (df.reindex, df.drop, df.rename)
+* Manipulate column datatypes
+
+## Let's get started!
+
 
 ```python
 import pandas as pd
@@ -127,17 +142,7 @@ df.head()
 
 
 
-# Practice
-
-## Objectives
-You will be able to:
-* Understand and explain what Pandas Series and DataFrames are and how they differ from dictionaries and lists
-* Create Series & DataFrames from dictionaries and lists
-* Manipulate columns in DataFrames (df.rename, df.drop)
-* Manipulate the index in DataFrames (df.reindex, df.drop, df.rename)
-* Manipulate column datatypes
-
-# Rename all the columns to lower case
+## Rename all the columns to lower case
 
 
 ```python
@@ -163,7 +168,7 @@ new_cols
 
 
 
-# Change the Index to be the Line Names
+## Change the Index to be the Line Names
 
 
 ```python
@@ -407,14 +412,14 @@ df.head()
 
 
 
-## Create another column 'Num_Lines' that is a count of how many lines pass through a station. Then sort your dataframe by this column in descending order.
+## Create another column 'Num_Lines' that is a count of how many lines pass through a station. Then sort your dataframe by this column in descending order
 
 
 ```python
 df['Num_Lines'] = df.LINENAME.map(lambda x: len(x))
 ```
 
-## Write a function to clean a column name.
+## Write a function to clean a column name
 
 
 ```python
@@ -447,7 +452,7 @@ df.columns
 
 
 
-## Compare subway traffic by day of the week. Display this as a graph.
+## Compare subway traffic by day of the week. Display this as a graph
 
 
 ```python
@@ -481,7 +486,7 @@ grouped.plot(kind='barh')
 df.DATE.dt.dayofweek?
 ```
 
-## Is there more subway traffic on a weekend or a weekday?    Be specific in comparing magnitudes.
+## Is there more subway traffic on a weekend or a weekday?    Be specific in comparing magnitudes
 
 
 ```python
@@ -595,7 +600,7 @@ wkend[['ENTRIES', 'EXITS']].plot(kind='barh')
 ![png](index_files/index_22_1.png)
 
 
-# Drop a couple of columns
+## Drop a couple of columns
 
 
 ```python
@@ -740,7 +745,6 @@ df.head(2)
 
 
 
+## Summary
 
-```python
-
-```
+Great! You practiced your data cleanup-skills using Pandas.
