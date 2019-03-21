@@ -142,16 +142,6 @@ df.head()
 
 
 
-# Practice
-
-## Objectives
-You will be able to:
-* Understand and explain what Pandas Series and DataFrames are and how they differ from dictionaries and lists
-* Create Series & DataFrames from dictionaries and lists
-* Manipulate columns in DataFrames (df.rename, df.drop)
-* Manipulate the index in DataFrames (df.reindex, df.drop, df.rename)
-* Manipulate column datatypes
-
 ## Rename all the columns to lower case
 
 
