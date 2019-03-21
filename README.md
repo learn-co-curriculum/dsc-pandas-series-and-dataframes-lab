@@ -1,7 +1,7 @@
 
 # Understanding Pandas Series and DataFrames - Lab
 
-# Introduction
+## Introduction
 
 In this lab, let's get some hands on practice working with data cleanup using Pandas.
 
@@ -11,6 +11,8 @@ You will be able to:
 * Manipulate columns in DataFrames (df.rename, df.drop)
 * Manipulate the index in DataFrames (df.reindex, df.drop, df.rename)
 * Manipulate column datatypes
+
+## Let's get started!
 
 
 ```python
@@ -150,35 +152,35 @@ You will be able to:
 * Manipulate the index in DataFrames (df.reindex, df.drop, df.rename)
 * Manipulate column datatypes
 
-# Rename all the columns to lower case
+## Rename all the columns to lower case
 
 
 ```python
 #Your code here
 ```
 
-# Change the Index to be the Line Names
+## Change the Index to be the Line Names
 
 
 ```python
 #Your code here
 ```
 
-# Painstakingly change the index back
+## Painstakingly change the index back
 
 
 ```python
 # Your code here
 ```
 
-## Create another column 'Num_Lines' that is a count of how many lines pass through a station. Then sort your dataframe by this column in descending order.
+## Create another column 'Num_Lines' that is a count of how many lines pass through a station. Then sort your dataframe by this column in descending order
 
 
 ```python
 # Your code here
 ```
 
-## Write a function to clean a column name.
+## Write a function to clean a column name
 
 
 ```python
@@ -209,16 +211,20 @@ df.columns
 #Your code here
 ```
 
-## Is there more subway traffic on a weekend or a weekday?    Be specific in comparing magnitudes.
+## Is there more subway traffic on a weekend or a weekday?    Be specific in comparing magnitudes
 
 
 ```python
 #Your code here
 ```
 
-# Drop a couple of columns
+## Drop a couple of columns
 
 
 ```python
 # Your code here
 ```
+
+## Summary
+
+Great! You practiced your data cleanup-skills using Pandas.
