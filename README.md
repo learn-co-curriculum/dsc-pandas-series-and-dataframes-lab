@@ -294,10 +294,11 @@ df.head()
 
 
 
+# Change the index back
+
 
 ```python
-# Painstakingly change the index back
-df = df.reset_index() #Not that painful
+df = df.reset_index() 
 df.head()
 ```
 
@@ -478,7 +479,7 @@ grouped.plot(kind='barh')
 
 
 
-![png](index_files/index_17_1.png)
+![png](index_files/index_18_1.png)
 
 
 
@@ -578,7 +579,7 @@ wkend[['ENTRIES', 'EXITS']].plot(kind='barh')
 
 
 
-![png](index_files/index_21_1.png)
+![png](index_files/index_22_1.png)
 
 
 
@@ -597,7 +598,7 @@ wkend[['ENTRIES', 'EXITS']].plot(kind='barh')
 
 
 
-![png](index_files/index_22_1.png)
+![png](index_files/index_23_1.png)
 
 
 ## Analysis Question: 
