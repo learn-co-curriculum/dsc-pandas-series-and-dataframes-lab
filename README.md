@@ -452,7 +452,7 @@ df.columns
 
 
 
-## Compare subway traffic by day of the week. Display this as a graph
+## Group the Data by Day of Week and Plot the Sum of The Numeric Columns
 
 
 ```python
@@ -486,7 +486,7 @@ grouped.plot(kind='barh')
 df.DATE.dt.dayofweek?
 ```
 
-## Is there more subway traffic on a weekend or a weekday?    Be specific in comparing magnitudes
+## Group the Data by Weekend/Weekday and Plot the Sum of the Numeric Columns
 
 
 ```python
@@ -599,6 +599,12 @@ wkend[['ENTRIES', 'EXITS']].plot(kind='barh')
 
 ![png](index_files/index_22_1.png)
 
+
+## Analysis Question: 
+
+What is misleading about the day of week and weekend/weekday charts you just plotted?
+
+> **Answer**: The raw data for entries/exits is cumulative. As such, you would first need to order the data by time and station, and then calculate the difference in order to produce meaningful aggregations.
 
 ## Drop a couple of columns
 
