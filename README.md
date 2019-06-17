@@ -156,7 +156,7 @@ df.head()
 #Your code here
 ```
 
-## Painstakingly change the index back
+# Change the index back
 
 
 ```python
@@ -194,18 +194,29 @@ df.columns = [clean(col) for col in df.columns]
 df.columns
 ```
 
-## Compare subway traffic by day of the week. Display this as a graph.
+## Group the Data by Day of Week and Plot the Sum of The Numeric Columns
 
 
 ```python
 #Your code here
 ```
 
-## Is there more subway traffic on a weekend or a weekday?    Be specific in comparing magnitudes
+## Group the Data by Weekend/Weekday and Plot the Sum of the Numeric Columns
 
 
 ```python
 #Your code here
+```
+
+## Analysis Question: 
+
+What is misleading about the day of week and weekend/weekday charts you just plotted?
+
+  
+
+
+```python
+# Your answer here 
 ```
 
 ## Drop a couple of columns
