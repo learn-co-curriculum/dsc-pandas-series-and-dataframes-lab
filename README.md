@@ -432,16 +432,16 @@ def clean(col_name):
 
 
 ```python
-#This is a list comprehension. It applies your clean function to every item in the list.
-#We then reassign that to df.columns
-#You shouldn't have to change anything here.
-#Your function above should work appropriately here.
+# This is a list comprehension. It applies your clean function to every item in the list.
+# We then reassign that to df.columns
+# You shouldn't have to change anything here.
+# Your function above should work appropriately here.
 df.columns = [clean(col) for col in df.columns] 
 ```
 
 
 ```python
-#Checking the output, we can see the results.
+# Checking the output, we can see the results.
 df.columns
 ```
 
@@ -606,7 +606,12 @@ wkend[['ENTRIES', 'EXITS']].plot(kind='barh')
 
 What is misleading about the day of week and weekend/weekday charts you just plotted?
 
-> **Answer**: The raw data for entries/exits is cumulative. As such, you would first need to order the data by time and station, and then calculate the difference in order to produce meaningful aggregations.
+
+```python
+# Answer: The raw data for entries/exits is cumulative. 
+# As such, you would first need to order the data by time and station, 
+# and then calculate the difference in order to produce meaningful aggregations.
+```
 
 ## Drop a couple of columns
 
