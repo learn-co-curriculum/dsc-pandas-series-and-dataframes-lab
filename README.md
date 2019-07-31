@@ -594,33 +594,33 @@ def clean(col_name):
 
 
 ```python
-#This is a list comprehension. It applies your clean function to every item in the list.
-#We then reassign that to df.columns
-#You shouldn't have to change anything here.
-#Your function above should work appropriately here.
+# This is a list comprehension. It applies your clean function to every item in the list.
+# We then reassign that to df.columns
+# You shouldn't have to change anything here.
+# Your function above should work appropriately here.
 df.columns = [clean(col) for col in df.columns] 
 ```
 
 
 ```python
-# __SOLUTION__ 
-#This is a list comprehension. It applies your clean function to every item in the list.
-#We then reassign that to df.columns
-#You shouldn't have to change anything here.
-#Your function above should work appropriately here.
+#  __SOLUTION__ 
+# This is a list comprehension. It applies your clean function to every item in the list.
+# We then reassign that to df.columns
+# You shouldn't have to change anything here.
+# Your function above should work appropriately here.
 df.columns = [clean(col) for col in df.columns] 
 ```
 
 
 ```python
-#Checking the output, we can see the results.
+# Checking the output, we can see the results.
 df.columns
 ```
 
 
 ```python
 # __SOLUTION__ 
-#Checking the output, we can see the results.
+# Checking the output, we can see the results.
 df.columns
 ```
 
@@ -637,7 +637,7 @@ df.columns
 
 
 ```python
-#Your code here
+# Your code here
 ```
 
 
@@ -646,17 +646,10 @@ df.columns
 df.DATE = pd.to_datetime(df.DATE)
 ```
 
-## Group the Data by Weekend/Weekday and Plot the Sum of the Numeric Columns
-
 
 ```python
 # __SOLUTION__ 
 df['Dayofweek'] = df.DATE.dt.dayofweek
-```
-
-
-```python
-#Your code here
 ```
 
 
@@ -674,12 +667,8 @@ grouped.plot(kind='barh')
 
 
 
-![png](index_files/index_30_1.png)
+![png](index_files/index_28_1.png)
 
-
-## Analysis Question: 
-
-What is misleading about the day of week and weekend/weekday charts you just plotted?
 
 
 ```python
@@ -687,11 +676,11 @@ What is misleading about the day of week and weekend/weekday charts you just plo
 df.DATE.dt.dayofweek?
 ```
 
-  
+## Group the Data by Weekend/Weekday and Plot the Sum of the Numeric Columns
 
 
 ```python
-# Your answer here 
+#Your code here
 ```
 
 
@@ -770,8 +759,6 @@ grouped.head()
 
 
 
-## Drop a couple of columns
-
 
 ```python
 # __SOLUTION__ 
@@ -788,13 +775,8 @@ wkend[['ENTRIES', 'EXITS']].plot(kind='barh')
 
 
 
-![png](index_files/index_37_1.png)
+![png](index_files/index_33_1.png)
 
-
-
-```python
-# Your code here
-```
 
 
 ```python
@@ -813,12 +795,32 @@ wkend[['ENTRIES', 'EXITS']].plot(kind='barh')
 
 
 
-![png](index_files/index_39_1.png)
+![png](index_files/index_34_1.png)
 
 
-## Summary
+## Analysis Question: 
 
-Great! You practiced your data cleanup-skills using Pandas.
+What is misleading about the day of week and weekend/weekday charts you just plotted?
+
+
+```python
+# Your answer here 
+```
+
+
+```python
+# __SOLUTION__ 
+# Answer: The raw data for entries/exits is cumulative. 
+# As such, you would first need to order the data by time and station, 
+# and then calculate the difference in order to produce meaningful aggregations.
+```
+
+## Drop a couple of columns
+
+
+```python
+# Your code here
+```
 
 
 ```python
@@ -964,3 +966,7 @@ df.head(2)
 </div>
 
 
+
+## Summary
+
+Great! You practiced your data cleanup-skills using Pandas.
