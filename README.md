@@ -182,16 +182,16 @@ def clean(col_name):
 
 
 ```python
-#This is a list comprehension. It applies your clean function to every item in the list.
-#We then reassign that to df.columns
-#You shouldn't have to change anything here.
-#Your function above should work appropriately here.
+# This is a list comprehension. It applies your clean function to every item in the list.
+# We then reassign that to df.columns
+# You shouldn't have to change anything here.
+# Your function above should work appropriately here.
 df.columns = [clean(col) for col in df.columns] 
 ```
 
 
 ```python
-#Checking the output, we can see the results.
+# Checking the output, we can see the results.
 df.columns
 ```
 
@@ -199,7 +199,7 @@ df.columns
 
 
 ```python
-#Your code here
+# Your code here
 ```
 
 ## Group the Data by Weekend/Weekday and Plot the Sum of the Numeric Columns
@@ -212,8 +212,6 @@ df.columns
 ## Analysis Question: 
 
 What is misleading about the day of week and weekend/weekday charts you just plotted?
-
-  
 
 
 ```python
