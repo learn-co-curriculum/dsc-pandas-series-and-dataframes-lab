@@ -8,9 +8,9 @@ In this lab, let's get some hands on practice working with data cleanup using Pa
 ## Objectives
 You will be able to:
 
-* Manipulate columns in DataFrames (df.rename, df.drop)
-* Manipulate the index in DataFrames (df.reindex, df.drop, df.rename)
-* Manipulate column datatypes
+* Manipulate columns in DataFrames (`df.rename()`, `df.drop()`) 
+* Manipulate the index in DataFrames (`df.reindex()`, `df.drop()`, `df.rename()`) 
+* Manipulate column datatypes 
 
 ## Let's get started!
 
@@ -24,11 +24,11 @@ import matplotlib.pyplot as plt
 
 ```python
 df = pd.read_csv('turnstile_180901.txt')
-print(len(df))
+print(df.shape)
 df.head()
 ```
 
-    197625
+    (197625, 11)
 
 
 
@@ -156,14 +156,14 @@ df.head()
 #Your code here
 ```
 
-## Change the index back
+## Remove the index
 
 
 ```python
 # Your code here
 ```
 
-## Create another column 'Num_Lines' that is a count of how many lines pass through a station. Then sort your dataframe by this column in descending order
+## Create another column 'Num_Lines' that is a count of how many lines pass through a station. Then sort your DataFrame by this column in descending order
 *Hint: According to the [data dictionary](http://web.mta.info/developers/resources/nyct/turnstile/ts_Field_Description.txt), LINENAME represents all train lines that can be boarded at a given station. Normally lines are represented by one character. For example, LINENAME 456NQR represents trains 4, 5, 6, N, Q, and R.*
 
 
