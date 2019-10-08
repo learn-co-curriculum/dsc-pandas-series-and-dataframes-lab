@@ -3,14 +3,14 @@
 
 ## Introduction
 
-In this lab, let's get some hands on practice working with data cleanup using Pandas.
+In this lab, let's get some hands-on practice working with data cleanup using Pandas.
 
 ## Objectives
 You will be able to:
 
-* Manipulate columns in DataFrames (`df.rename()`, `df.drop()`) 
-* Manipulate the index in DataFrames (`df.reindex()`, `df.drop()`, `df.rename()`) 
-* Manipulate column datatypes 
+- Manipulate columns in DataFrames (`df.rename()`, `df.drop()`) 
+- Manipulate the index in DataFrames (`df.reindex()`, `df.drop()`, `df.rename()`) 
+- Manipulate column datatypes 
 
 ## Let's get started!
 
@@ -157,4 +157,4 @@ df.head(2)
 
 ## Summary
 
-Great! You practiced your data cleanup-skills using Pandas.
+Great! You practiced your data cleanup skills using Pandas.
