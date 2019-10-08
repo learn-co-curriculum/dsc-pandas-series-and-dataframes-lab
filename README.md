@@ -3,14 +3,14 @@
 
 ## Introduction
 
-In this lab, let's get some hands on practice working with data cleanup using Pandas.
+In this lab, let's get some hands-on practice working with data cleanup using Pandas.
 
 ## Objectives
 You will be able to:
 
-* Manipulate columns in DataFrames (`df.rename()`, `df.drop()`) 
-* Manipulate the index in DataFrames (`df.reindex()`, `df.drop()`, `df.rename()`) 
-* Manipulate column datatypes 
+- Manipulate columns in DataFrames (`df.rename()`, `df.drop()`) 
+- Manipulate the index in DataFrames (`df.reindex()`, `df.drop()`, `df.rename()`) 
+- Manipulate column datatypes 
 
 ## Let's get started!
 
@@ -227,4 +227,4 @@ What is misleading about the day of week and weekend/weekday charts you just plo
 
 ## Summary
 
-Great! You practiced your data cleanup-skills using Pandas.
+Great! You practiced your data cleanup skills using Pandas.
