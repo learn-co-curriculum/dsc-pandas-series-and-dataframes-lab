@@ -8,14 +8,18 @@ In this lab, let's get some hands-on practice working with data cleanup using Pa
 ## Objectives
 You will be able to:
 
-* Manipulate columns in DataFrames (`df.rename()`, `df.drop()`) 
-* Manipulate the index in DataFrames (`df.reindex()`, `df.drop()`, `df.rename()`) 
-* Manipulate column datatypes 
+- Use the `.map()` and `.apply()` methods to apply a function to a pandas Series or DataFrame 
+- Perform operations to change the structure of pandas DataFrames 
+- Change the index of a pandas DataFrame 
+- Change data types of columns in pandas DataFrames 
 
-## Let's get started!
+## Let's get started! 
+
+Import the file `'turnstile_180901.txt'`. 
 
 
 ```python
+# Import the required libraries
 import pandas as pd
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -23,206 +27,139 @@ import matplotlib.pyplot as plt
 
 
 ```python
+# Import the file 'turnstile_180901.txt'
 df = pd.read_csv('turnstile_180901.txt')
+
+# Print the number of rows ans columns in df
 print(df.shape)
+
+# Print the first five rows of df
 df.head()
 ```
 
-    (197625, 11)
-
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>C/A</th>
-      <th>UNIT</th>
-      <th>SCP</th>
-      <th>STATION</th>
-      <th>LINENAME</th>
-      <th>DIVISION</th>
-      <th>DATE</th>
-      <th>TIME</th>
-      <th>DESC</th>
-      <th>ENTRIES</th>
-      <th>EXITS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>A002</td>
-      <td>R051</td>
-      <td>02-00-00</td>
-      <td>59 ST</td>
-      <td>NQR456W</td>
-      <td>BMT</td>
-      <td>08/25/2018</td>
-      <td>00:00:00</td>
-      <td>REGULAR</td>
-      <td>6736067</td>
-      <td>2283184</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>A002</td>
-      <td>R051</td>
-      <td>02-00-00</td>
-      <td>59 ST</td>
-      <td>NQR456W</td>
-      <td>BMT</td>
-      <td>08/25/2018</td>
-      <td>04:00:00</td>
-      <td>REGULAR</td>
-      <td>6736087</td>
-      <td>2283188</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>A002</td>
-      <td>R051</td>
-      <td>02-00-00</td>
-      <td>59 ST</td>
-      <td>NQR456W</td>
-      <td>BMT</td>
-      <td>08/25/2018</td>
-      <td>08:00:00</td>
-      <td>REGULAR</td>
-      <td>6736105</td>
-      <td>2283229</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>A002</td>
-      <td>R051</td>
-      <td>02-00-00</td>
-      <td>59 ST</td>
-      <td>NQR456W</td>
-      <td>BMT</td>
-      <td>08/25/2018</td>
-      <td>12:00:00</td>
-      <td>REGULAR</td>
-      <td>6736180</td>
-      <td>2283314</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>A002</td>
-      <td>R051</td>
-      <td>02-00-00</td>
-      <td>59 ST</td>
-      <td>NQR456W</td>
-      <td>BMT</td>
-      <td>08/25/2018</td>
-      <td>16:00:00</td>
-      <td>REGULAR</td>
-      <td>6736349</td>
-      <td>2283384</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-## Rename all the columns to lower case
+Rename all the columns to lower case: 
 
 
 ```python
-#Your code here
+# Rename all the columns to lower case
+
 ```
 
-## Change the Index to be the Line Names
+Change the index to `'linename'`: 
 
 
 ```python
-#Your code here
+# Change the index to 'linename'
+
 ```
 
-## Remove the index
+Remove the index: 
 
 
 ```python
-# Your code here
+# Remove the index
+
 ```
 
-## Create another column 'Num_Lines' that is a count of how many lines pass through a station. Then sort your DataFrame by this column in descending order
+Create another column `'Num_Lines'` that is a count of how many lines pass through a station. Then sort your DataFrame by this column in descending order. 
+
 *Hint: According to the [data dictionary](http://web.mta.info/developers/resources/nyct/turnstile/ts_Field_Description.txt), LINENAME represents all train lines that can be boarded at a given station. Normally lines are represented by one character. For example, LINENAME 456NQR represents trains 4, 5, 6, N, Q, and R.*
 
 
 ```python
-# Your code here
+# Add a new 'num_lines' column
+
 ```
 
-## Write a function to clean a column name
+Write a function to clean column names: 
 
 
 ```python
 def clean(col_name):
-    cleaned = #Your code here; whatever you want to do to col_name. Hint: think back to str methods.
+    # Clean the column name in any way you want to. Hint: think back to str methods 
+    cleaned = None
     return cleaned
 ```
 
 
 ```python
-# This is a list comprehension. It applies your clean function to every item in the list.
-# We then reassign that to df.columns
-# You shouldn't have to change anything here.
-# Your function above should work appropriately here.
-df.columns = [clean(col) for col in df.columns] 
+# Use the above function to clean the column names
+
 ```
 
 
 ```python
-# Checking the output, we can see the results.
+# Check to ensure the column names were cleaned
 df.columns
 ```
 
-## Group the Data by Day of Week and Plot the Sum of The Numeric Columns
+- Change the data type of the `'date'` column to a date 
+- Add a new column `'day_of_week'` that represents the day of the week
 
 
 ```python
-# Your code here
-```
+# Convert the data type of the 'date' column to a date
 
-## Group the Data by Weekend/Weekday and Plot the Sum of the Numeric Columns
+
+# Add a new column 'day_of_week' that represents the day of the week 
+
+```
 
 
 ```python
-#Your code here
+# Group the data by day of week and plot the sum of the numeric columns
+grouped = df.groupby('day_of_week').sum()
+grouped.plot(kind='barh')
+plt.show()
 ```
 
-## Analysis Question: 
+- Remove the index of `grouped` 
+- Print the first five rows of `grouped` 
+
+
+```python
+# Reset the index of grouped
+grouped = None
+
+# Print the first five rows of grouped
+
+```
+
+Add a new column `'is_weekend'` that maps the `'day_of_week'` column using the dictionary `weekend_map` 
+
+
+```python
+# Use this dictionary to create a new column 
+weekend_map = {0:False, 1:False, 2:False, 3:False, 4:False, 5:True, 6:True}
+
+# Add a new column 'is_weekend' that maps the 'day_of_week' column using weekend_map
+grouped['is_weekend'] = grouped['day_of_week'].map(weekend_map)
+```
+
+
+```python
+# Group the data by weekend/weekday and plot the sum of the numeric columns
+wkend = grouped.groupby('is_weekend').mean()
+wkend[['entries', 'exits']].plot(kind='barh')
+plt.show()
+```
+
+Remove the `'c/a'` and `'scp'` columns. 
+
+
+```python
+# Remove the 'c/a' and 'scp' columns
+df = None
+df.head(2)
+```
+
+## Analysis Question 
 
 What is misleading about the day of week and weekend/weekday charts you just plotted?
 
 
 ```python
 # Your answer here 
-```
-
-## Drop a couple of columns
-
-
-```python
-# Your code here
 ```
 
 ## Summary
