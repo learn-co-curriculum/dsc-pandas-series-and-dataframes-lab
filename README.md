@@ -322,18 +322,18 @@ df.head()
 
 
 
-Remove the index: 
+Reset the index: 
 
 
 ```python
-# Remove the index
+# Reset the index
 
 ```
 
 
 ```python
 # __SOLUTION__ 
-# Remove the index
+# Reset the index
 df = df.reset_index() 
 df.head()
 ```
