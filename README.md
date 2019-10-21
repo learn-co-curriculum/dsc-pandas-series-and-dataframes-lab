@@ -53,11 +53,11 @@ Change the index to `'linename'`:
 
 ```
 
-Remove the index: 
+Reset the index: 
 
 
 ```python
-# Remove the index
+# Reset the index
 
 ```
 
