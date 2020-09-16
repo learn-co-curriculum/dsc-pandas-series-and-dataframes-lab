@@ -139,7 +139,7 @@ grouped['is_weekend'] = grouped['day_of_week'].map(weekend_map)
 
 ```python
 # Group the data by weekend/weekday and plot the sum of the numeric columns
-wkend = grouped.groupby('is_weekend').mean()
+wkend = grouped.groupby('is_weekend').sum()
 wkend[['entries', 'exits']].plot(kind='barh')
 plt.show()
 ```
