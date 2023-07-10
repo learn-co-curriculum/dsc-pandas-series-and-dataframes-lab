@@ -1,4 +1,3 @@
-
 # Understanding Pandas Series and DataFrames - Lab
 
 ## Introduction
@@ -468,7 +467,9 @@ plt.show()
 ```
 
 
+    
 ![png](index_files/index_17_0.png)
+    
 
 
 - Remove the index of `grouped` 
@@ -572,7 +573,9 @@ plt.show()
 ```
 
 
+    
 ![png](index_files/index_22_0.png)
+    
 
 
 Remove the `'c/a'` and `'scp'` columns. 
