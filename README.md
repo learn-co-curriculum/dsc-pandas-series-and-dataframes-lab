@@ -461,7 +461,7 @@ df['day_of_week'] = df['date'].dt.dayofweek
 
 ```python
 # Group the data by day of week and plot the sum of the numeric columns
-grouped = df.groupby('day_of_week').sum()
+grouped = df.groupby('day_of_week').sum(numeric_only = True)
 grouped.plot(kind='barh')
 plt.show()
 ```
@@ -567,7 +567,7 @@ grouped['is_weekend'] = grouped['day_of_week'].map(weekend_map)
 
 ```python
 # Group the data by weekend/weekday and plot the sum of the numeric columns
-wkend = grouped.groupby('is_weekend').sum()
+wkend = grouped.groupby('is_weekend').sum(numeric_only = True)
 wkend[['entries', 'exits']].plot(kind='barh')
 plt.show()
 ```
