@@ -1,4 +1,3 @@
-
 # Understanding Pandas Series and DataFrames - Lab
 
 ## Introduction
@@ -545,7 +544,7 @@ df['day_of_week'] = df['date'].dt.dayofweek
 
 ```python
 # Group the data by day of week and plot the sum of the numeric columns
-grouped = df.groupby('day_of_week').sum()
+grouped = df.groupby('day_of_week').sum(numeric_only = True)
 grouped.plot(kind='barh')
 plt.show()
 ```
@@ -560,7 +559,9 @@ plt.show()
 ```
 
 
+    
 ![png](index_files/index_28_0.png)
+    
 
 
 - Remove the index of `grouped` 
@@ -693,7 +694,9 @@ plt.show()
 ```
 
 
+    
 ![png](index_files/index_36_0.png)
+    
 
 
 Remove the `'c/a'` and `'scp'` columns. 
