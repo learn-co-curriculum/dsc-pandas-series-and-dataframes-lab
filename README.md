@@ -176,6 +176,12 @@ Rename all the columns to lower case:
 
 
 ```python
+# We can check and see what the columns look like with this code:
+df.columns
+```
+
+
+```python
 # Rename all the columns to lower case
 
 ```
@@ -185,6 +191,12 @@ Rename all the columns to lower case:
 # __SOLUTION__ 
 # Rename all the columns to lower case
 df.columns = [col.lower() for col in df.columns]
+```
+
+
+```python
+# Now let's check and make sure that worked
+df.columns
 ```
 
 Change the index to `'linename'`: 
@@ -200,6 +212,7 @@ Change the index to `'linename'`:
 # __SOLUTION__ 
 # Change the index to 'linename'
 df = df.set_index('linename')
+# Calling .head() on a dataframe is a good way to check on a variety of changes like this.
 df.head()
 ```
 
@@ -469,6 +482,13 @@ Write a function to clean column names:
 
 
 ```python
+# Before we start cleaning, let's look at what we've got
+
+df.columns
+```
+
+
+```python
 def clean(col_name):
     # Clean the column name in any way you want to. Hint: think back to str methods 
     cleaned = None
@@ -479,7 +499,8 @@ def clean(col_name):
 ```python
 # __SOLUTION__ 
 def clean(col_name):
-    # Clean the column name in any way you want to. Hint: think back to str methods 
+    # Clean the column name in any way you want to. Hint: think back to str methods
+    # For this solution code, we've just gone with .strip() 
     cleaned = col_name.strip()
     return cleaned
 ```
@@ -560,7 +581,7 @@ plt.show()
 
 
     
-![png](index_files/index_28_0.png)
+![png](index_files/index_31_0.png)
     
 
 
@@ -695,7 +716,7 @@ plt.show()
 
 
     
-![png](index_files/index_36_0.png)
+![png](index_files/index_39_0.png)
     
 
 
