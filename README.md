@@ -12,7 +12,7 @@ You will be able to:
 - Change the index of a pandas DataFrame 
 - Change data types of columns in pandas DataFrames 
 
-## Let's get started! 
+## Let's get started 
 
 Import the file `'turnstile_180901.txt'`. 
 
@@ -164,6 +164,7 @@ Change the index to `'linename'`:
 ```python
 # Change the index to 'linename'
 df = df.set_index('linename')
+# Calling .head() on a dataframe is a good way to check on a variety of changes like this.
 df.head()
 ```
 
@@ -420,7 +421,8 @@ Write a function to clean column names:
 
 ```python
 def clean(col_name):
-    # Clean the column name in any way you want to. Hint: think back to str methods 
+    # Clean the column name in any way you want to. Hint: think back to str methods
+    # For this solution code, we've just gone with .strip() 
     cleaned = col_name.strip()
     return cleaned
 ```
@@ -669,4 +671,4 @@ What is misleading about the day of week and weekend/weekday charts you just plo
 
 ## Summary
 
-Great! You practiced your data cleanup skills using Pandas.
+You practiced your data cleanup skills using Pandas.
