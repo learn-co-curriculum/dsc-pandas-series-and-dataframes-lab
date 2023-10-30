@@ -12,7 +12,7 @@ You will be able to:
 - Change the index of a pandas DataFrame 
 - Change data types of columns in pandas DataFrames 
 
-## Let's get started! 
+## Let's get started 
 
 Import the file `'turnstile_180901.txt'`. 
 
@@ -825,4 +825,4 @@ What is misleading about the day of week and weekend/weekday charts you just plo
 
 ## Summary
 
-Great! You practiced your data cleanup skills using Pandas.
+You practiced your data cleanup skills using Pandas.
