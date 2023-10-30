@@ -12,7 +12,7 @@ You will be able to:
 - Change the index of a pandas DataFrame 
 - Change data types of columns in pandas DataFrames 
 
-## Let's get started! 
+## Let's get started 
 
 Import the file `'turnstile_180901.txt'`. 
 
@@ -40,8 +40,20 @@ Rename all the columns to lower case:
 
 
 ```python
+# We can check and see what the columns look like with this code:
+df.columns
+```
+
+
+```python
 # Rename all the columns to lower case
 
+```
+
+
+```python
+# Now let's check and make sure that worked
+df.columns
 ```
 
 Change the index to `'linename'`: 
@@ -71,6 +83,13 @@ Create another column `'Num_Lines'` that is a count of how many lines pass throu
 ```
 
 Write a function to clean column names: 
+
+
+```python
+# Before we start cleaning, let's look at what we've got
+
+df.columns
+```
 
 
 ```python
@@ -163,4 +182,4 @@ What is misleading about the day of week and weekend/weekday charts you just plo
 
 ## Summary
 
-Great! You practiced your data cleanup skills using Pandas.
+You practiced your data cleanup skills using Pandas.
